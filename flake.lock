@@ -1,0 +1,100 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1685480784,
+        "narHash": "sha256-pkk3J9gX745LEkkeTGhSRJqPJkmCPQzwI/q7a720XaY=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "54a9d6456eaa6195998a0f37bdbafee9953ca0fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-23.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "kickstart-neovim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681392867,
+        "narHash": "sha256-h03O+5whUOKeuBo8iZND5tEXVeDHQgsGTQVczGhlpgA=",
+        "owner": "nvim-lua",
+        "repo": "kickstart.nvim",
+        "rev": "9924f7e0a0fbc2caea91007a5d66cb9aa74827db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lua",
+        "ref": "master",
+        "repo": "kickstart.nvim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1692414505,
+        "narHash": "sha256-sSTuyR9JYSxmUcYcj0Jvw1hIq1tz/Canw9mK0hEJvnE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4cdad15f34e6321a2f789b99d42815b9142ac2ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1679944645,
+        "narHash": "sha256-e5Qyoe11UZjVfgRfwNoSU57ZeKuEmjYb77B9IVW7L/M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4bb072f0a8b267613c127684e099a70e1f6ff106",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1680464750,
+        "narHash": "sha256-20bP0roHuVhncvCIu1FTkfKJ1QIKxG1IxfmBjKOiP3c=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "93e5e544f84b56d4b6bee62e0242e93ce5f11dee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "kickstart-neovim": "kickstart-neovim",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "nur": "nur"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
