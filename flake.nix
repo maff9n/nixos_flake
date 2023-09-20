@@ -14,6 +14,17 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@attrs: {
+    nixosConfigurations.loki = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = attrs;
+      modules = [
+        ./loki
+        ./share
+        home-manager.nixosModules.home-manager
+        { nixpkgs.overlays = [ nur.overlay ]; }
+      ];
+    };
+
     nixosConfigurations.ullr = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
