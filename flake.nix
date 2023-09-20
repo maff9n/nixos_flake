@@ -13,5 +13,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }@attrs: {};
+  outputs = { self, nixpkgs, home-manager, nur, ... }@attrs: {
+    nixosConfigurations.ullr = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = attrs;
+      modules = [
+        ./ullr
+        ./share
+        home-manager.nixosModules.home-manager
+        { nixpkgs.overlays = [ nur.overlay ]; }
+      ];
+    };
+  };
 }
