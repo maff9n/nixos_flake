@@ -14,6 +14,15 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nur, ... }@attrs: {
+    nixosConfigurations.server =
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          ./lapi-server
+        ];
+      };
+
     nixosConfigurations.loki = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
