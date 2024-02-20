@@ -48,34 +48,34 @@
 
             nnoremap n nzzzv    " <- centers cursors while searching through files
             nnoremap N Nzzzv    " <- centers cursors while searching through files
-           
-            nmap <C-q> :confirm q<CR>
-            imap <C-q> <Esc>:confirm q<CR>
-            vmap <C-q> <Esc>:confirm q<CR>
-            
+
             map <C-h> <C-w>h
             map <C-j> <C-w>j
             map <C-k> <C-w>k
             map <C-l> <C-w>l
-            
-            inoremap . .<C-g>u
-            inoremap / /<C-g>u
-            inoremap \ \<C-g>u
+
             inoremap [ [<C-g>u
             inoremap ] ]<C-g>u
             inoremap ( (<C-g>u
             inoremap ) )<C-g>u
-            
+
             vnoremap > >gv
             vnoremap < <gv
             nnoremap < <<
             nnoremap > >>
-            
+
             vnoremap J :m '>+1<CR>gv=gv
             vnoremap K :m '<-2<CR>gv=gv
-            nnoremap J :m .+1<CR>== 
-            nnoremap K :m .-2<CR>== 
-            
+            nnoremap J :m .+1<CR>==
+            nnoremap K :m .-2<CR>==
+
+            #:set list  See tabs in a file
+            #!!!sidescroll=10
+            #set wrap!!!
+            #splitright
+
+            nnoremap <C-d> <C-d>zz 
+            nnoremap <C-u> <C-u>zz
             nnoremap <SPACE> <Nop>    " <- prevents Space executed inline in case leader follows no command
 
             highlight CursorLine cterm=NONE ctermbg=237

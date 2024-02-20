@@ -16,27 +16,30 @@ in
     ###
     ### LOOK AT THESE
     ###
-    hyperfine # benchmark for commands
-    procs
+    #hyperfine # benchmark for commands
+    #procs
     zettlr # markdown
+    youtube-dl
     fd
+    #jamesdsp # equalizer
     gnome.eog
-    bundler
-    rclone
-    jq # JSON tool
+    #bundler
+    #rclone
+    #jq # JSON tool
     alacritty # necesarry for i3status
-    gcc
-    nmap # hack the box
+    #gcc
+    #nmap # hack the box
+    clamav # antivirus "sudo freshclam" maybe required
     gnome.nautilus
     openvpn
-    htop # for checking on running processes
+    #htop # for checking on running processes
     duf # examine storage
     ###
     ### LIKELY NOT USEFULL TO KNOW
     ###
-    jdk
-    dart
-    networkmanagerapplet
+    #jdk
+    #dart
+    #networkmanagerapplet
     niv
     xclip
     jsoncpp # necessary for polybar
@@ -48,52 +51,54 @@ in
     tig
     gnome.gnome-font-viewer
     gnome.vinagre
-    powertop
-    latencytop
+    #powertop
+    #latencytop
     ffmpeg
     audacity
     gnome.gnome-clocks
-    elmPackages.elm-format
-    elmPackages.elm-review
-    elmPackages.elm-live
-    elmPackages.elm-language-server
-    elmPackages.elm-spa
-    elmPackages.elm
-    xorg.xdpyinfo
-    lm_sensors
-    dmidecode
+    #elmPackages.elm-format
+    #elmPackages.elm-review
+    #elmPackages.elm-live
+    #elmPackages.elm-language-server
+    #elmPackages.elm-spa
+    rstudio
+    #elmPackages.elm
+    #xorg.xdpyinfo
+    #lm_sensors
+    #dmidecode
     calibre # ebooks
-    inxi
-    glxinfo
+    #inxi
+    #glxinfo
+    anki
     spotify
     navi
     openconnect
-    ntfs3g
+    #ntfs3g
     discord
-    fzf
-    selenium-server-standalone
+    #fzf
+    #selenium-server-standalone
     gparted
     inkscape
     scribus
     polybarFull
     imagemagick
     man
-    ghc
-    jekyll
-    cargo
+    #ghc
+    #jekyll
+    #cargo
     p7zip
     file
     zip
     unzip
     rnix-lsp
     nix-index
-    haskellPackages.haskell-language-server
+    #haskellPackages.haskell-language-server
     tldr
-    rust-analyzer
+    #rust-analyzer
     python310Packages.python-lsp-server
     nodePackages.bash-language-server
     nodejs
-    bundix
+    #bundix
     rustc
     cabal-install
     hlint
@@ -104,7 +109,6 @@ in
     ripgrep
     firefox
     brave
-    tmux
     redshift
     ranger
     libreoffice
@@ -120,6 +124,7 @@ in
     pavucontrol
     i3lock
     i3
+    parallel
     rofi
     kitty
     sumneko-lua-language-server
@@ -136,13 +141,17 @@ in
     (import ./config/git.nix)
     (import ./config/ranger.nix { pkgs = pkgs; })
     (import ./config/bat.nix)
-    (import ./config/tmux.nix)
+    (import ./config/tmux.nix { pkgs = pkgs; })
     (import ./config/redshift.nix)
     (import ./config/polybar.nix)
   ];
 
   fonts.fontconfig.enable = true;
-
+  programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
   programs.home-manager.enable = true;
   programs.firefox = import ./config/firefox.nix { inherit lib pkgs; };
 }

@@ -1,7 +1,8 @@
 { lib, pkgs, ... }:
 let
   mod = "Mod1";
-  wallpaper = ../design/images/wallpaper01.png;
+  wallpaper = ../design/images/wallpaper02.png;
+  screensaver = ../design/images/wallpaper01.png;
 in
 {
   xsession.windowManager.i3 = {
@@ -69,7 +70,7 @@ in
         ###
         ### Special keys
         ###
-        "${mod}+0" = "exec i3lock -i ${wallpaper}";
+        "${mod}+0" = "exec i3lock -i ${screensaver}";
 
         #WEBCAM
         #bindsym $mod+X exec floating_webcam    
@@ -143,13 +144,9 @@ in
       exec_always pkill -9 polybar ; pkill -9 i3bar ; polybar desktopbottombar
       exec_always feh --bg-scale ${wallpaper}
 
-      assign [class="Brave"] 8
-      for_window [class="Brave"] fullscreen
-      exec_always brave --app=https://teams.microsoft.com
-
       assign [class="Thunderbird"] 9
       # exec_always thunderbird
-      exec_always feh --bg-scale ${wallpaper}
+      # exec_always feh --bg-scale ${wallpaper}
     '';
   };
 }
