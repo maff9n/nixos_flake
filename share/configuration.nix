@@ -27,6 +27,9 @@ programs.zsh.enable = true;
       xterm.enable = true;
     };
   };
+  
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;
 
   environment.pathsToLink = [ "/share/zsh" ];
 
