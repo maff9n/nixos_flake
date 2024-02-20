@@ -1,5 +1,9 @@
 ## Collection of nixOS configurations
 
+
+![ci-badge](https://img.shields.io/static/v1?label=Built%20with&message=nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212)
+[![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fmaff9n%2Fnixos_flake)](https://garnix.io)
+
 This repository holds all necessary configuration files for multiple nixOS machines.  
 Please feel free to check them out.  
 The way to go is: `nixos-rebuild switch --use-remote-sudo --flake <PATH_TO_DIRECTORY>#<NIXOS_CONFIGURATION_NAME>`
