@@ -6,6 +6,7 @@
   networking.useDHCP = false;
   networking.interfaces.wlp3s0.useDHCP = true;
 
+	nixpkgs.config.allowUnfree = true;
 
    services.tailscale.enable = true;
    networking.firewall.checkReversePath = "loose";

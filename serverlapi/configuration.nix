@@ -12,6 +12,8 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.logind.lidSwitch = "ignore";
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -23,10 +25,87 @@
     };
   };
 
+  services.xserver.libinput.enable = true;
+  services.xserver.libinput.touchpad = {
+    naturalScrolling = false;
+    middleEmulation = false;
+    tapping = false;
+  };
+users.users.alice = {
+  isNormalUser  = true;
+  home  = "/home/alice";
+  description  = "Alice Foobar";
+  extraGroups  = [ "wheel" "networkmanager" ];
+  # openssh.authorizedKeys.keys  = [ "ssh-dss AAAAB3Nza... alice@foobar" ];
+};
+environment.etc."nextcloud-admin-pass".text = "test123";
+    services.nextcloud = {
+      enable = true;
+      https = false;
+      package = pkgs.nextcloud26;
+      hostName = "localhost";
+      config.extraTrustedDomains = [ "100.92.224.132" "192.168.1.113" ];
+      config.adminpassFile = "/etc/nextcloud-admin-pass";
+      # extraApps = let
+      #     some = config.services.nextcloud.extraApps;
+      #     in with some; {
+      #   inherit news contacts calendar tasks;
+      # };
+      extraAppsEnable = false;
+    };
+  # services.nextcloud = {
+  #   enable = true;
+  #   hostName = "cloud.example.com";
+  #   https = true;
+  #       package = pkgs.nextcloud26;
+  #   config = {
+  #     dbtype = "pgsql";
+  #     dbuser = "nextcloud";
+  #     dbhost = "/run/postgresql";
+  #     dbname = "nextcloud";
+  #     adminuser = "root";
+  #     adminpassFile = "/var/lib/nextcloud/adminpass";
+  #   };
+  # };
+
+  # services.postgresql = {
+  #   enable = true;
+  #   ensureDatabases = [ "nextcloud" ];
+  #   ensureUsers = [
+  #     {
+  #       name = "nextcloud";
+  #       ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+  #     }
+  #   ];
+  # };
+
+  # systemd.services."nextcloud-setup" = {
+  #   requires = [ "postgresql.service" ];
+  #   after = [ "postgresql.service" ];
+  # };
+
+  # services.nginx = {
+  #   enable = true;
+  #   recommendedGzipSettings = true;
+  #   recommendedOptimisation = true;
+  #   recommendedProxySettings = true;
+  #   recommendedTlsSettings = true;
+
+  #   virtualHosts = {
+  #     "cloud.example.com" = {
+  #       forceSSL = true;
+  #       enableACME = true;
+  #     };
+  #   };
+  # };
+
+  # services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+  #   forceSSL = true;
+  #   enableACME = true;
+  # };
   console.keyMap = "de";
 
-  services.printing.enable = true;
-
+  # systemd.services.NetworkManager-wait-online.enable = false;
   networking.wireless.userControlled.enable = false;
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
@@ -45,6 +124,8 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+security.acme.defaults.email = "marvin1995mann@gmail.com";
+  security.acme.acceptTerms = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -58,6 +139,10 @@
     #media-session.enable = true;
   };
 
+  environment.systemPackages = [ pkgs.tailscale ];
+
+  services.tailscale.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -70,6 +155,25 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  networking.firewall = {
+    # enable the firewall
+    enable = true;
+
+    # always allow traffic from your Tailscale network
+    trustedInterfaces = [ "tailscale0" ];
+
+    # allow the Tailscale UDP port through the firewall
+    allowedUDPPorts = [ config.services.tailscale.port ];
+
+    # allow you to SSH in over the public internet
+    allowedTCPPorts = [ 22 ]; # Wieder einschränken?
+    # allowedTCPPorts = [ 80 443 ];
+  };
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
