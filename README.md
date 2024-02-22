@@ -1,4 +1,4 @@
-## nixOS flakes
+## NixOS flakes
 
 ![ci-badge](https://img.shields.io/static/v1?label=Built%20with&message=nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212)
 [![built with garnix](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Fmaff9n%2Fnixos_flake)](https://garnix.io)
@@ -8,7 +8,7 @@
 
 Have a look at the available flake outputs ~  
 I would advice to checkout "ullr" first.  
-"loki" and "server" were once more specialized and will certainly gain a more specific profil in the near future.
+"loki" and "server" were once more specialized and will certainly gain a more refined profile in the near future.
 
 ```console
 $ nix flake show github:maff9n/nixos_flake
@@ -40,5 +40,5 @@ The `home.nix` file contains details about all the software I use, but here's a 
 ### Overall Goals
 
 Have all your shortcuts and favorite tools at hand - anywhere.  
-Eliminate reliances on state for the machines in your care.  
+Eliminate reliance on state for the machines in your care.  
 New machine? New job? Machine got stolen? Minimize the downtime.
