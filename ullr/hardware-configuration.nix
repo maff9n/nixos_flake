@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
@@ -14,19 +13,15 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  hardware.sane.enable = true;
-
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/3ea98175-b9bf-44df-a937-3cd0bb9ec7ba";
+    { device = "/dev/disk/by-uuid/add6d5e4-32f0-4732-86e7-cb454ee8a8ae";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-06aafc0e-5e5d-489b-a1e7-aa50ae428618".device = "/dev/disk/by-uuid/06aafc0e-5e5d-489b-a1e7-aa50ae428618";
+  boot.initrd.luks.devices."luks-3ab1b0ab-d812-4982-bfb6-e7a493564229".device = "/dev/disk/by-uuid/3ab1b0ab-d812-4982-bfb6-e7a493564229";
 
-  fileSystems."/boot/efi" =
-    {
-      device = "/dev/disk/by-uuid/5FC2-51A6";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/4992-F2A0";
       fsType = "vfat";
     };
 
@@ -37,10 +32,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
