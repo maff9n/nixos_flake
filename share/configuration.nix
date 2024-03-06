@@ -38,7 +38,9 @@ programs.zsh.enable = true;
   services.printing.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  # mkpasswd -m sha-512 <SECRET_PASSWORD>
   users.users.maff9n = {
+    hashedPassword = "$6$By5yKLSyeWZJOhfZ$fo.Djt6NhvlvsRS5Z1dhReAyWncQ3t.G3Q46wpVcPi.EoS9IB1eMGfinWhduTQBkOG2jviIbvTVmPum9wnHdT0";
     isNormalUser = true;
     extraGroups = [ "docker" "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;

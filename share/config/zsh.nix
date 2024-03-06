@@ -6,7 +6,6 @@
     enableCompletion = true;
 
     shellAliases = {
-      vconf = "vim $HOME/nixos-config/modules/neovim.nix";
       c = "git clean -ndx";
       cf = "git clean -fdx";
       r = "ranger";

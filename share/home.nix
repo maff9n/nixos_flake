@@ -1,6 +1,4 @@
 { lib, pkgs, ... }:
-let
-in
 {
   home.keyboard.layout = "de";
 
@@ -20,6 +18,7 @@ in
     #procs
     zettlr # markdown
     youtube-dl
+    neovim
     fd
     #jamesdsp # equalizer
     gnome.eog
