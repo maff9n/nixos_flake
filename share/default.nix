@@ -5,7 +5,7 @@ with lib;
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.maff9n = import ./home.nix;
+      home-manager.users.maff9n = import ./home.nix { inherit nixpkgs-unstable pkgs lib; };
     }
     (import ./configuration.nix)
   ];

@@ -31,7 +31,7 @@
   #   };
   # };
 
-    environment.systemPackages = [ pkgs.tailscale ];
+  environment.systemPackages = [ pkgs.tailscale pkgs.qemu ];
 
   services.tailscale.enable = true;
 

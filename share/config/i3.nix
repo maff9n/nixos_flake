@@ -90,8 +90,8 @@ in
           Escape = "mode \"default\"";
         };
         "Screenshot of: (W)hole Page, (R)egion" = {
-          r = "--release exec i3-msg mode \"default\" && import ~/Pictures/screenshots/$(date '+%y%m%d%H%M%S').png";
-          w = "exec i3-msg mode \"default\" && sleep 0.1 && import -window root ~/Pictures/screenshots/$(date '+%y%m%d%H%M%S').png";
+          r = "--release exec i3-msg mode \"default\" && mkdir -p ~/Pictures/screenshots && import ~/Pictures/screenshots/$(date '+%y%m%d%H%M%S').png";
+          w = "exec i3-msg mode \"default\" && sleep 0.1 && mkdir -p ~/Pictures/screenshots && import -window root ~/Pictures/screenshots/$(date '+%y%m%d%H%M%S').png";
           Return = "mode \"default\"";
           Escape = "mode \"default\"";
         };

@@ -1,4 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, nixpkgs-unstable, ... }:
+let
+  unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+in
 {
   home.keyboard.layout = "de";
 
@@ -24,7 +27,7 @@
     gnome.eog
     #bundler
     #rclone
-    #jq # JSON tool
+    jq # JSON tool
     alacritty # necesarry for i3status
     #gcc
     #nmap # hack the box
@@ -65,6 +68,7 @@
     #xorg.xdpyinfo
     #lm_sensors
     #dmidecode
+    fzf
     calibre # ebooks
     #inxi
     #glxinfo
@@ -114,7 +118,7 @@
     tree
     git
     #gitFull
-    pkgs.signal-desktop
+    unstable.signal-desktop
     gimp
     feh
     vlc
@@ -147,10 +151,10 @@
 
   fonts.fontconfig.enable = true;
   programs.direnv = {
-      enable = true;
-      enableBashIntegration = true;
-      nix-direnv.enable = true;
-    };
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
   programs.home-manager.enable = true;
   programs.firefox = import ./config/firefox.nix { inherit lib pkgs; };
 }
