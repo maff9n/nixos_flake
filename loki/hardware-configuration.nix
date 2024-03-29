@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_usb_sdmmc" ];
@@ -15,16 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/edc0ef48-0bad-4c6b-99c5-958bff780d74";
+    { device = "/dev/disk/by-uuid/c11ad7a7-f46d-4736-b6e9-0282cc615f83";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-20f6f86a-43ff-42d9-948a-2103adafd965".device = "/dev/disk/by-uuid/20f6f86a-43ff-42d9-948a-2103adafd965";
+  boot.initrd.luks.devices."luks-5b64a92d-bae1-4c0d-8ee6-fdc2c2563feb".device = "/dev/disk/by-uuid/5b64a92d-bae1-4c0d-8ee6-fdc2c2563feb";
 
-  fileSystems."/boot/efi" =
-    {
-      device = "/dev/disk/by-uuid/99D9-948F";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/A268-78C9";
       fsType = "vfat";
     };
 
@@ -39,6 +36,5 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
