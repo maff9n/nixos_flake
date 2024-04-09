@@ -13,7 +13,6 @@ with lib; let
           else generators.mkValueStringDefault { } v;
       } " = ";
   };
-
   system_colors = import ./../themes/gruvbox/system_color_picker.nix;
 in
 {

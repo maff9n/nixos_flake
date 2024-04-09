@@ -1,6 +1,5 @@
-{ lib, pkgs, ... }:
 # https://gitlab.com/rycee/nur-expressions/-/blob/master/pkgs/firefox-addons/addons.json
-
+{ lib, pkgs, ... }:
 {
   enable = true;
   profiles = {
@@ -19,17 +18,17 @@
       "findbar.highlightAll" = true;
     };
     default.extensions = (with pkgs.nur.repos.rycee.firefox-addons; [
-            darkreader
-            privacy-badger
-# shortkeys ???
-            reddit-enhancement-suite
-            ublock-origin
-            multi-account-containers
-            keepassxc-browser
-            bitwarden
-            vimium
-            octotree
-            refined-github
+      darkreader
+      privacy-badger
+      #shortkeys
+      reddit-enhancement-suite
+      ublock-origin
+      multi-account-containers
+      keepassxc-browser
+      bitwarden
+      vimium
+      octotree
+      refined-github
     ]);
   };
 }

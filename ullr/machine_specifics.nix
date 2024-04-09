@@ -1,12 +1,5 @@
 { lib, pkgs, ... }:
 {
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  # networking.useDHCP = false;
-  # networking.interfaces.enp5s0.useDHCP = true;
-  # networking.interfaces.wlp3s0.useDHCP = true;
-
   boot.loader.timeout = 5;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -20,6 +13,9 @@
 
   networking.hostName = "ullr";
 
+  # LATENCYTOP
+  # LATENCYTOP
+  # LATENCYTOP
   # nixpkgs.config.packageOverrides = pkgs: pkgs.lib.recursiveUpdate pkgs {
   #   linuxKernel.kernels.linux_5_15 = pkgs.linuxKernel.kernels.linux_5_15.override {
   #     extraConfig = ''
@@ -36,8 +32,6 @@
   services.tailscale.enable = true;
 
   services.openssh.enable = true;
-
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;

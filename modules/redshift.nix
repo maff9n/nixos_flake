@@ -1,7 +1,7 @@
 { lib, osConfig, ... }:
 {
   services.redshift = {
-    enable = lib.mkIf (osConfig.networking.hostName != "mimir") true;
+    enable = true;
     latitude = 51.05;
     longitude = 13.73;
     temperature = {

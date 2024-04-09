@@ -1,15 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { lib, config, pkgs, ... }:
-
 {
-
   ###
   ### MOVE THIS INTO A SEPERATE FILE U CAN ACTUALLY PUBLISH ON GITHUB
   ###
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.logind.lidSwitch = "ignore";
@@ -18,7 +14,6 @@
   services.xserver = {
     enable = true;
     layout = "de";
-
     displayManager.gdm.enable = true;
     desktopManager = {
       gnome.enable = true;
@@ -31,28 +26,28 @@
     middleEmulation = false;
     tapping = false;
   };
-users.users.alice = {
-  isNormalUser  = true;
-  home  = "/home/alice";
-  description  = "Alice Foobar";
-  extraGroups  = [ "wheel" "networkmanager" ];
-  # openssh.authorizedKeys.keys  = [ "ssh-dss AAAAB3Nza... alice@foobar" ];
-};
-environment.etc."nextcloud-admin-pass".text = "test123";
-    services.nextcloud = {
-      enable = true;
-      https = false;
-      package = pkgs.nextcloud26;
-      hostName = "localhost";
-      config.extraTrustedDomains = [ "100.92.224.132" "192.168.1.113" ];
-      config.adminpassFile = "/etc/nextcloud-admin-pass";
-      # extraApps = let
-      #     some = config.services.nextcloud.extraApps;
-      #     in with some; {
-      #   inherit news contacts calendar tasks;
-      # };
-      extraAppsEnable = false;
-    };
+  users.users.alice = {
+    isNormalUser = true;
+    home = "/home/alice";
+    description = "Alice Foobar";
+    extraGroups = [ "wheel" "networkmanager" ];
+    # openssh.authorizedKeys.keys  = [ "ssh-dss AAAAB3Nza... alice@foobar" ];
+  };
+  environment.etc."nextcloud-admin-pass".text = "test123";
+  services.nextcloud = {
+    enable = true;
+    https = false;
+    package = pkgs.nextcloud26;
+    hostName = "localhost";
+    config.extraTrustedDomains = [ "100.92.224.132" "192.168.1.113" ];
+    config.adminpassFile = "/etc/nextcloud-admin-pass";
+    # extraApps = let
+    #     some = config.services.nextcloud.extraApps;
+    #     in with some; {
+    #   inherit news contacts calendar tasks;
+    # };
+    extraAppsEnable = false;
+  };
   # services.nextcloud = {
   #   enable = true;
   #   hostName = "cloud.example.com";
@@ -118,13 +113,11 @@ environment.etc."nextcloud-admin-pass".text = "test123";
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-security.acme.defaults.email = "marvin1995mann@gmail.com";
+  security.acme.defaults.email = "marvin1995mann@gmail.com";
   security.acme.acceptTerms = true;
   services.pipewire = {
     enable = true;
@@ -142,7 +135,6 @@ security.acme.defaults.email = "marvin1995mann@gmail.com";
   environment.systemPackages = [ pkgs.tailscale ];
 
   services.tailscale.enable = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -188,5 +180,4 @@ security.acme.defaults.email = "marvin1995mann@gmail.com";
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }

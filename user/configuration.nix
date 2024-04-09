@@ -1,33 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { lib, config, pkgs, ... }:
-
 {
-
   programs.zsh.enable = true;
-
-  ###
-  ### MOVE THIS INTO A SEPERATE FILE U CAN ACTUALLY PUBLISH ON GITHUB
-  ###
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
   ];
-  # Enable the X11 windowing system.
+
   services.xserver = {
     enable = true;
     layout = "de";
-
     displayManager.gdm.enable = true;
     desktopManager = {
       xterm.enable = true;
     };
   };
-  
+
   services.clamav.daemon.enable = true;
   services.clamav.updater.enable = true;
 
@@ -46,14 +38,6 @@
     shell = pkgs.zsh;
   };
 
-  ###
-  ### MOSTLIKELY NECESSARY TO MOVE THESE INTO THE HOME-MANAGER FILE
-  ###
-
-  ###
-  ### STUFF THAT I DONT WANT TO SEE PUBLISHED
-  ###
-
   networking.extraHosts = ''
     0.0.0.0 somethingsomething.com
     0.0.0.0 www.somethingsomething.com
@@ -65,14 +49,7 @@
 
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Berlin";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -90,7 +67,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -117,5 +93,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

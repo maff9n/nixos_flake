@@ -14,9 +14,6 @@
       f = ''selected_dir=$(find /home/$USER/ -type d -not -path "*/.*" -not -path "/home/$USER/go/*" | fzf) && [ -n "$selected_dir" ] && cd "$selected_dir"'';
       fz = ''selected_dir=$(find /home/$USER/ -type d -not -path "/home/$USER/go/*" | fzf) && [ -n "$selected_dir" ] && cd "$selected_dir"'';
     };
-    sessionVariables = {
-      BAT_THEME = "gruvbox";
-    };
     initExtra = ''
       stty -ixon > /dev/null # Disable flow control to enable ctrl q & s for ranger
     '';

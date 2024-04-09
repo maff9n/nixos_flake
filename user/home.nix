@@ -4,7 +4,6 @@ let
 in
 {
   home.keyboard.layout = "de";
-
   home.username = "maff9n";
   home.homeDirectory = "/home/maff9n";
   home.stateVersion = "22.05";
@@ -12,7 +11,6 @@ in
   xsession.enable = true;
   xsession.windowManager.command = lib.mkForce "exec ${pkgs.i3}/bin/i3";
 
-  ## List of all packages explicitly available to the user
   home.packages = with pkgs; [
     ###
     ### LOOK AT THESE
@@ -23,89 +21,53 @@ in
     youtube-dl
     neovim
     fd
-    #jamesdsp # equalizer
+    jamesdsp # equalizer
     gnome.eog
-    #bundler
-    #rclone
-    jq # JSON tool
+    jq # JSON
     alacritty # necesarry for i3status
-    #gcc
-    #nmap # hack the box
-    clamav # antivirus "sudo freshclam" maybe required
+    clamav # antivirus "sudo freshclam"
     gnome.nautilus
     openvpn
-    #htop # for checking on running processes
-    duf # examine storage
-    ###
-    ### LIKELY NOT USEFULL TO KNOW
-    ###
+    htop # processes
+    duf # storage
     #jdk
-    #dart
-    #networkmanagerapplet
-    niv
+    networkmanagerapplet # network
     xclip
     jsoncpp # necessary for polybar
     nixpkgs-fmt
-    ###
-    ### THINGS U KNOW
-    ###
-    bat
+    bat # override?
     tig
     gnome.gnome-font-viewer
     gnome.vinagre
-    #powertop
-    #latencytop
+    powertop
+    #latencytop needs a certain kernel flag
     ffmpeg
     audacity
     gnome.gnome-clocks
-    #elmPackages.elm-format
-    #elmPackages.elm-review
-    #elmPackages.elm-live
-    #elmPackages.elm-language-server
-    #elmPackages.elm-spa
-    rstudio
-    #elmPackages.elm
-    #xorg.xdpyinfo
-    #lm_sensors
-    #dmidecode
+    # rstudio # statistics
+    #xorg.xdpyinfo # displaying information about an X server
+    #dmidecode # DMI SMBIOS
     fzf
     calibre # ebooks
-    #inxi
-    #glxinfo
+    #inxi # system information
     anki
     spotify
     navi
     openconnect
-    #ntfs3g
+    ntfs3g
     discord
-    #fzf
-    #selenium-server-standalone
     gparted
     inkscape
     scribus
-    polybarFull
+    polybarFull # override?
     imagemagick
     man
-    #ghc
-    #jekyll
-    #cargo
     p7zip
     file
     zip
     unzip
-    rnix-lsp
     nix-index
-    #haskellPackages.haskell-language-server
     tldr
-    #rust-analyzer
-    python310Packages.python-lsp-server
-    nodePackages.bash-language-server
-    nodejs
-    #bundix
-    rustc
-    cabal-install
-    hlint
-    cabal2nix
     magic-wormhole
     obs-studio
     oh-my-zsh
@@ -129,13 +91,11 @@ in
     i3
     parallel
     rofi
-    kitty
-    sumneko-lua-language-server
+    kitty # override?
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   imports = [
-    (import ./../modules/android.nix)
     (import ./../modules/neovim.nix)
     (import ./../modules/i3.nix)
     (import ./../modules/rofi.nix)
@@ -143,7 +103,6 @@ in
     (import ./../modules/kitty.nix)
     (import ./../modules/git.nix)
     (import ./../modules/ranger.nix { pkgs = pkgs; })
-    (import ./../modules/bat.nix)
     (import ./../modules/tmux.nix { pkgs = pkgs; })
     (import ./../modules/redshift.nix)
     (import ./../modules/polybar.nix)

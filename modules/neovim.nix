@@ -4,5 +4,5 @@
     enable = false;
     viAlias = true;
     vimAlias = true;
-};
+  };
 }
