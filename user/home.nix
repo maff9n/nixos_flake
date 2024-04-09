@@ -102,7 +102,7 @@ in
     (import ./../modules/zsh.nix)
     (import ./../modules/kitty.nix)
     (import ./../modules/git.nix)
-    (import ./../modules/ranger.nix { pkgs = pkgs; })
+    (import ./../modules/ranger.nix { pkgs = pkgs; username = "maff9n"; })
     (import ./../modules/tmux.nix { pkgs = pkgs; })
     (import ./../modules/redshift.nix)
     (import ./../modules/polybar.nix)
