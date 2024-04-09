@@ -27,7 +27,12 @@
         ./loki
         ./share
         home-manager.nixosModules.home-manager
-        { nixpkgs.overlays = [ nur.overlay ]; }
+        {
+          nixpkgs.overlays = [
+            nur.overlay
+            (final: prev: { neovim = nvim.outputs.packages.x86_64-linux.default; })
+          ];
+        }
       ];
     };
 
