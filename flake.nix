@@ -25,7 +25,7 @@
       specialArgs = attrs;
       modules = [
         ./loki
-        ./share
+        ./user
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [
@@ -41,7 +41,7 @@
       specialArgs = attrs;
       modules = [
         ./ullr
-        ./share
+        ./user
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [

@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
   mod = "Mod1";
-  wallpaper = ../design/images/wallpaper02.png;
-  screensaver = ../design/images/wallpaper01.png;
+  wallpaper = ../img/wallpaper02.png;
+  screensaver = ../img/wallpaper01.png;
 in
 {
   xsession.windowManager.i3 = {

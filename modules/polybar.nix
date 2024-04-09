@@ -14,7 +14,7 @@ with lib; let
       } " = ";
   };
 
-  system_colors = import ./../design/system_color_picker.nix;
+  system_colors = import ./../themes/gruvbox/system_color_picker.nix;
 in
 {
   xdg.configFile."polybar/config.ini".text = customToINI {

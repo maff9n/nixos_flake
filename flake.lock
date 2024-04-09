@@ -147,11 +147,11 @@
         "telescope-recent-files-src": "telescope-recent-files-src"
       },
       "locked": {
-        "lastModified": 1711582380,
-        "narHash": "sha256-oZngDMNTJE75U3C4wNujhUEpCgLZ6NStBHqwDLJVJig=",
+        "lastModified": 1712476175,
+        "narHash": "sha256-BgE+WHMprVY/VviUS6AfiyVgFCrzDU6C4sASPdl2Trc=",
         "owner": "maff9n",
         "repo": "neovim_flake",
-        "rev": "f9affa26fbbea49324a2f735cd30d60bc1a9af3b",
+        "rev": "f74b22f4555896fadb8af2b8ca6b844bc9b4de5c",
         "type": "github"
       },
       "original": {

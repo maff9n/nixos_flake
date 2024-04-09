@@ -135,18 +135,18 @@ in
   ];
 
   imports = [
-    (import ./config/android.nix)
-    (import ./config/neovim.nix)
-    (import ./config/i3.nix)
-    (import ./config/rofi.nix)
-    (import ./config/zsh.nix)
-    (import ./config/kitty.nix)
-    (import ./config/git.nix)
-    (import ./config/ranger.nix { pkgs = pkgs; })
-    (import ./config/bat.nix)
-    (import ./config/tmux.nix { pkgs = pkgs; })
-    (import ./config/redshift.nix)
-    (import ./config/polybar.nix)
+    (import ./../modules/android.nix)
+    (import ./../modules/neovim.nix)
+    (import ./../modules/i3.nix)
+    (import ./../modules/rofi.nix)
+    (import ./../modules/zsh.nix)
+    (import ./../modules/kitty.nix)
+    (import ./../modules/git.nix)
+    (import ./../modules/ranger.nix { pkgs = pkgs; })
+    (import ./../modules/bat.nix)
+    (import ./../modules/tmux.nix { pkgs = pkgs; })
+    (import ./../modules/redshift.nix)
+    (import ./../modules/polybar.nix)
   ];
 
   fonts.fontconfig.enable = true;
@@ -156,5 +156,5 @@ in
     nix-direnv.enable = true;
   };
   programs.home-manager.enable = true;
-  programs.firefox = import ./config/firefox.nix { inherit lib pkgs; };
+  programs.firefox = import ./../modules/firefox.nix { inherit lib pkgs; };
 }
