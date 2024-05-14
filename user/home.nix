@@ -12,87 +12,79 @@ in
   xsession.windowManager.command = lib.mkForce "exec ${pkgs.i3}/bin/i3";
 
   home.packages = with pkgs; [
-    ###
-    ### LOOK AT THESE
-    ###
-    #hyperfine # benchmark for commands
-    #procs
-    zettlr # markdown
-    youtube-dl
-    neovim
-    fd
+    zettlr # markdown editor
+    youtube-dl # download youtube
+    neovim # editor
+    fd # file search
     jamesdsp # equalizer
-    gnome.eog
+    gnome.eog # image viewer
     jq # JSON
     alacritty # necesarry for i3status
     clamav # antivirus "sudo freshclam"
-    gnome.nautilus
-    openvpn
+    gnome.nautilus # file explorer
+    openvpn # vpn
     htop # processes
     duf # storage
-    #jdk
     networkmanagerapplet # network
-    xclip
+    xclip # clipboard
     jsoncpp # necessary for polybar
-    nixpkgs-fmt
-    bat # override?
-    tig
-    gnome.gnome-font-viewer
-    gnome.vinagre
-    powertop
-    #latencytop needs a certain kernel flag
-    ffmpeg
-    audacity
-    gnome.gnome-clocks
-    # rstudio # statistics
-    #xorg.xdpyinfo # displaying information about an X server
-    #dmidecode # DMI SMBIOS
-    fzf
+    nixpkgs-fmt # nix file formater
+    bat # text output
+    tig # git interface
+    gnome.gnome-font-viewer # font viewer
+    gnome.vinagre # remote desktop viewer
+    ffmpeg # audio and video editing
+    audacity # audio recording & editing
+    gnome.gnome-clocks # clocks, alarm etc.
+    fzf # fuzzy finder
     calibre # ebooks
-    #inxi # system information
-    anki
-    spotify
-    navi
-    openconnect
-    ntfs3g
-    discord
-    gparted
-    inkscape
-    scribus
-    polybarFull # override?
-    imagemagick
-    man
-    p7zip
-    file
-    zip
-    unzip
-    nix-index
-    tldr
-    magic-wormhole
-    obs-studio
-    oh-my-zsh
-    ripgrep
-    firefox
-    brave
-    redshift
-    ranger
-    libreoffice
-    tree
-    git
-    #gitFull
-    unstable.signal-desktop
-    gimp
-    feh
-    vlc
-    thunderbird
-    insomnia
-    pavucontrol
-    i3lock
-    i3
-    parallel
-    rofi
-    kitty # override?
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    inxi # system information
+    anki # flash cards
+    spotify # music
+    navi # commands knowledge
+    openconnect # networking vpn
+    ntfs3g # file system
+    discord # chat
+    gparted # partition
+    inkscape # image editor
+    tokei # repository language
+    scribus # text editor
+    polybarFull # status bars
+    imagemagick # image editor
+    man # commands knowledge
+    p7zip # file archive
+    file # file info
+    zip # file archive
+    unzip # file archive
+    tldr # commands knowledge
+    magic-wormhole # file transfer
+    obs-studio # stream
+    oh-my-zsh # shell zsh
+    ripgrep # file find text string
+    firefox # browser
+    brave # browser
+    redshift # display temperature
+    ranger # file explorer
+    libreoffice # document editor
+    tree # file explorer
+    git # content managment
+    unstable.signal-desktop # chat messenger
+    gimp # image editor
+    feh # display image
+    vlc # media player
+    thunderbird # email
+    insomnia # rest api
+    pavucontrol # audio managment
+    i3lock # lock screen
+    i3 # windowManager
+    parallel # run commands parallel
+    rofi # application launcher and so much more
+    kitty # terminal
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; }) # fonts
+    # gitFull
+    # powertop
+    # latencytop # requires kernel flag
+    # hyperfine # benchmark for commands
   ];
 
   imports = [
