@@ -13,7 +13,6 @@ in
 
   home.packages = with pkgs; [
     zettlr # markdown editor
-    youtube-dl # download youtube
     neovim # editor
     fd # file search
     jamesdsp # equalizer
