@@ -13,7 +13,7 @@
 
   services.xserver = {
     enable = true;
-    layout = "de";
+    xkb.layout = "de";
     displayManager.gdm.enable = true;
     desktopManager = {
       xterm.enable = true;

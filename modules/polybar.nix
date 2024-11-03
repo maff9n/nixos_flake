@@ -85,7 +85,7 @@ in
 
     "module/wired-network" = {
       type = "internal/network";
-      interface = "enp5s0";
+      interface = "enp3s0";
       interval = "5.0";
 
       format-connected = "<label-connected>";
@@ -98,7 +98,7 @@ in
     "module/pulseaudio" = {
       type = "internal/pulseaudio";
       click-right = "pavucontrol";
-      format-muted = "%{T2}ﱝ%{T-} <label-volume>";
+      format-muted = "%{T2}墳%{T-} <label-muted>";
       format-muted-background = "${system_colors.custom.white}";
       format-muted-foreground = "${system_colors.terminal.color1}";
       format-volume = "%{T2}墳%{T-} <label-volume>";
@@ -110,7 +110,7 @@ in
 
     "module/my_date" = {
       type = "custom/script";
-      exec = ''"date +%H\:%M\ \-\ %a\ %d\.%b"'';
+      exec = ''date +%H\\:%M\\ \\-\\ %a\\ %d\\.%b'';
       interval = 15;
       click-right = "gnome-clocks";
       label-background = "${system_colors.custom.white}";

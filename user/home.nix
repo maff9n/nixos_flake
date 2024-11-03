@@ -20,6 +20,7 @@ in
     jq # JSON
     alacritty # necesarry for i3status
     clamav # antivirus "sudo freshclam"
+    ethtool # look up networking interface
     gnome.nautilus # file explorer
     openvpn # vpn
     htop # processes
