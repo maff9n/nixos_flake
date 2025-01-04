@@ -22,7 +22,6 @@ in
       modules-right = "battery wireless-network wired-network cpu memory pulseaudio my_date";
       bottom = true;
       font-0 = "FiraCode Nerd Font Mono:size=13;4";
-      font-1 = "RobotoMono Nerd Font Mono:style=Medium,Regular:size=13;4";
       background = "${system_colors.terminal.background}";
       tray-position = "none";
       border-top-size = 5;
@@ -54,7 +53,7 @@ in
 
     "module/cpu" = {
       type = "internal/cpu";
-      label = "%{T2}%{T-} %percentage%%";
+      label = " %percentage%%";
       interval = 3.0;
       label-padding = 1;
       label-background = "${system_colors.custom.white}";
@@ -98,10 +97,10 @@ in
     "module/pulseaudio" = {
       type = "internal/pulseaudio";
       click-right = "pavucontrol";
-      format-muted = "%{T2}墳%{T-} <label-muted>";
+      format-muted = " <label-muted>";
       format-muted-background = "${system_colors.custom.white}";
       format-muted-foreground = "${system_colors.terminal.color1}";
-      format-volume = "%{T2}墳%{T-} <label-volume>";
+      format-volume = " <label-volume>";
       format-volume-background = "${system_colors.custom.white}";
       format-volume-foreground = "${system_colors.terminal.background}";
       format-volume-padding = 1;

@@ -80,7 +80,7 @@ in
     parallel # run commands parallel
     rofi # application launcher and so much more
     kitty # terminal
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; }) # fonts
+    nerdfonts
     # gitFull
     # powertop
     # latencytop # requires kernel flag
@@ -88,7 +88,6 @@ in
   ];
 
   imports = [
-    (import ./../modules/neovim.nix)
     (import ./../modules/i3.nix)
     (import ./../modules/rofi.nix)
     (import ./../modules/zsh.nix)
@@ -100,7 +99,6 @@ in
     (import ./../modules/polybar.nix)
   ];
 
-  fonts.fontconfig.enable = true;
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;

@@ -11,6 +11,10 @@
     "spotify"
   ];
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   services.xserver = {
     enable = true;
     xkb.layout = "de";
