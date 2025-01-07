@@ -84,7 +84,14 @@ in
     # gitFull
     # powertop
     # latencytop # requires kernel flag
-    # hyperfine # benchmark for commands
+    hyperfine # benchmark for command-line tools
+    dive # make layers of a docker image more efficient
+    entr # RUN STUF WHEN A FILE CHANGES!!!
+    fdupes # look for duplicated files
+    # cmus # command line music player
+    # lazydocker # manage docker images etc
+    asciinema_3 # record terminal! easy embeded into tutorial/website
+    # mycli # command-line interface for mySQL with auto-completion
   ];
 
   imports = [
