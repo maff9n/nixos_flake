@@ -13,6 +13,11 @@
 
   networking.hostName = "ullr";
 
+  nix.gc.automatic = true;
+  nix.gc.dates = "daily";
+  nix.gc.options = "--delete-older-than 93d";
+  nix.settings.auto-optimise-store = false;
+
   # LATENCYTOP
   # LATENCYTOP
   # LATENCYTOP

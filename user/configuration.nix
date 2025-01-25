@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { lib, config, pkgs, ... }:
 {
-  programs.zsh.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -79,6 +78,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.zsh.enable = true;
   programs.ssh.startAgent = lib.mkForce true;
 
   # Enable the OpenSSH daemon.

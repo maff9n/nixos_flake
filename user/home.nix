@@ -90,7 +90,7 @@ in
     fdupes # look for duplicated files
     # cmus # command line music player
     # lazydocker # manage docker images etc
-    asciinema_3 # record terminal! easy embeded into tutorial/website
+    asciinema # record terminal! easy embeded into tutorial/website
     # mycli # command-line interface for mySQL with auto-completion
   ];
 
