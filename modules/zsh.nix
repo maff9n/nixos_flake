@@ -14,8 +14,10 @@
       f = ''selected_dir=$(find /home/$USER/ -type d -not -path "*/.*" -not -path "/home/$USER/go/*" | fzf) && [ -n "$selected_dir" ] && cd "$selected_dir"'';
       fz = ''selected_dir=$(find /home/$USER/ -type d -not -path "/home/$USER/go/*" | fzf) && [ -n "$selected_dir" ] && cd "$selected_dir"'';
     };
-    initExtra = ''
+    initContent = ''
       stty -ixon > /dev/null # Disable flow control to enable ctrl q & s for ranger
+      VISUAL=nvim # Make nvim rangers default
+      EDITOR=nvim # Make nvim rangers default
     '';
     loginExtra = ''
       # bat cache --build # Load theme changes ### CAUSES INITs to not be executed!!!

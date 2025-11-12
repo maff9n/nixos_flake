@@ -16,12 +16,16 @@ in
     neovim # editor
     fd # file search
     jamesdsp # equalizer
-    gnome.eog # image viewer
+    rpl # replace strings
+    nmap
+    eog # image viewer
+    gnome-disk-utility
+    dig # DNS test tools
     jq # JSON
     alacritty # necesarry for i3status
     clamav # antivirus "sudo freshclam"
     ethtool # look up networking interface
-    gnome.nautilus # file explorer
+    nautilus # file explorer
     openvpn # vpn
     htop # processes
     duf # storage
@@ -31,11 +35,11 @@ in
     nixpkgs-fmt # nix file formater
     bat # text output
     tig # git interface
-    gnome.gnome-font-viewer # font viewer
-    gnome.vinagre # remote desktop viewer
+    gnome-font-viewer # font viewer
+    remmina # remote desktop viewer
     ffmpeg # audio and video editing
     audacity # audio recording & editing
-    gnome.gnome-clocks # clocks, alarm etc.
+    gnome-clocks # clocks, alarm etc.
     fzf # fuzzy finder
     calibre # ebooks
     inxi # system information
@@ -61,7 +65,7 @@ in
     obs-studio # stream
     oh-my-zsh # shell zsh
     ripgrep # file find text string
-    firefox # browser
+    # firefox # browser
     brave # browser
     redshift # display temperature
     ranger # file explorer
@@ -80,7 +84,8 @@ in
     parallel # run commands parallel
     rofi # application launcher and so much more
     kitty # terminal
-    nerdfonts
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
     # gitFull
     # powertop
     # latencytop # requires kernel flag

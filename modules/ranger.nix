@@ -1,9 +1,9 @@
 { pkgs, username, ... }:
 {
-  programs.zsh.initExtra = ''
-    VISUAL=nvim # Make nvim rangers default
-    EDITOR=nvim # Make nvim rangers default
-  '';
+  # programs.zsh.initExtra = ''
+  #   VISUAL=nvim # Make nvim rangers default
+  #   EDITOR=nvim # Make nvim rangers default
+  # '';
   xdg.configFile."ranger/rc.conf".text = ''
     map DD shell mkdir -p /home/${username}/.local/share/Trash/files && mv %s /home/${username}/.local/share/Trash/files/
     set mouse_enabled false
