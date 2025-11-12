@@ -2,9 +2,9 @@
   description = "Collection of nixOS configurations";
 
   inputs = rec {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nur.url = "github:nix-community/NUR";
     nvim.url = "github:maff9n/neovim_flake/d439bddeba8f768cc9c51ea8df75cee85fe0cdb6";
@@ -45,7 +45,7 @@
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [
-            nur.overlay
+            nur.overlays.default
             (final: prev: { neovim = nvim.outputs.packages.x86_64-linux.default; })
           ];
         }

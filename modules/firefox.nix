@@ -17,7 +17,7 @@
       "browser.newtab.privateAllowed" = true;
       "findbar.highlightAll" = true;
     };
-    default.extensions = (with pkgs.nur.repos.rycee.firefox-addons; [
+    default.extensions.packages = (with pkgs.nur.repos.rycee.firefox-addons; [
       darkreader
       privacy-badger
       #shortkeys

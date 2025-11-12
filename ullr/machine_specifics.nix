@@ -10,6 +10,7 @@
   # boot.loader.grub.device = "/dev/nvme0n1";
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = false;
 
   networking.hostName = "ullr";
 

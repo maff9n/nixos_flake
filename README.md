@@ -8,7 +8,7 @@
 
 Have a look at the available flake outputs ~  
 I would advice to checkout "ullr" first.  
-"loki" and "server" were once more specialized and will certainly gain a more refined profile in the near future.
+"loki" and "server" were quite different in the past and will certainly gain a more refined profile in the near future.
 
 ```console
 $ nix flake show github:maff9n/nixos_flake
@@ -32,13 +32,13 @@ The `home.nix` file contains details about all the software I use, but here's a 
 | :------------- | :----------: |
 | Editor         | [NeoVim](https://neovim.io/) |
 | Launcher       | [Rofi](https://github.com/davatorium/rofi) |
-| Shell          | [Kitty](https://sw.kovidgoyal.net/kitty/) |
+| Shell          | [ZSH](https://www.zsh.org/) |
 | Status Bar     | [Polybar](https://polybar.github.io/) |
-| Terminal       | [XTerm](https://invisible-island.net/xterm/) |
+| Terminal       | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | Window Manager | [i3](https://i3wm.org/) |
 
 ### Overall Goals
 
 Have all your shortcuts and favorite tools at hand - anywhere.  
-Eliminate reliance on state for the machines in your care.  
+Eliminate reliances on state for the machines in your care.  
 New machine? New job? Machine got stolen? Minimize the downtime.

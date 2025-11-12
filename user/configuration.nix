@@ -11,7 +11,8 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
   ];
 
   services.xserver = {
@@ -55,7 +56,6 @@
   time.timeZone = "Europe/Berlin";
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
